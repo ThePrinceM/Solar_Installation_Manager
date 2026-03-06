@@ -34,7 +34,7 @@ function showDebug(msg) {
 }
 
 function testBackend() {
-    fetch("http://localhost:5000/debug")
+    fetch("/api/debug")
         .then(res => res.json())
         .then(data => showDebug(JSON.stringify(data)))
         .catch(err => showDebug("Backend error: " + err));
@@ -46,7 +46,7 @@ function testIrradiance() {
         return;
     }
 
-    fetch("http://localhost:5000/calculate-location", {
+    fetch("/api/calculate-location", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ lat: selectedLat, lng: selectedLng, roof_area: 1 })
@@ -64,7 +64,7 @@ function calculateSolar() {
         return;
     }
 
-    fetch("http://localhost:5000/calculate-location", {
+    fetch("/api/calculate-location", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

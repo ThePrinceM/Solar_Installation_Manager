@@ -1,27 +1,10 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/debug.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/debug.py": {
+      "runtime": "@vercel/python"
     },
-    {
-      "src": "api/calculate.py",
-      "use": "@vercel/python"
+    "api/calculate.py": {
+      "runtime": "@vercel/python"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/debug",
-      "dest": "/api/debug.py"
-    },
-    {
-      "src": "/api/calculate",
-      "dest": "/api/calculate.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  }
 }

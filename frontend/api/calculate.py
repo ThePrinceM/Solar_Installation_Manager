@@ -27,10 +27,15 @@ def get_irradiance(lat, lng):
 
 def handler(event, context):
     try:
-        if event.get('httpMethod') != 'POST':
+        if event.get('method') != 'POST':
             return {
                 "statusCode": 405,
-                "headers": {"Content-Type": "application/json"},
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Headers": "Content-Type",
+                    "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+                },
                 "body": json.dumps({"error": "Method not allowed"})
             }
 

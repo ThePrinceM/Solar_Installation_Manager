@@ -46,7 +46,7 @@ function testIrradiance() {
         return;
     }
 
-    fetch("/api/calculate-location", {
+    fetch("/api/calculate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ lat: selectedLat, lng: selectedLng, roof_area: 1 })
@@ -64,7 +64,7 @@ function calculateSolar() {
         return;
     }
 
-    fetch("/api/calculate-location", {
+    fetch("/api/calculate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

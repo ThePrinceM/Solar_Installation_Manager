@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - solar-net
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    networks:
+      - solar-net
+
+networks:
+  solar-net:

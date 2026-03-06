@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    <h2>Solar Calculator</h2>
+
+    <button onclick="testBackend()">Test Backend</button>
+    <button onclick="testIrradiance()">Test Irradiance API</button>
+
+    <div id="debugOutput"></div>
+
+    <label>Roof Area (sq meters):</label>
+    <input type="number" id="roofArea">
+
+    <h3>Click a location on the map</h3>
+    <div id="map"></div>
+
+    <p>Selected Location: <b id="locationDisplay">None</b></p>
+
+    <button onclick="calculateSolar()">Calculate</button>
+
+    <h3>Results</h3>
+    <div id="result"></div>
+
+    <canvas id="energyChart"></canvas>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
